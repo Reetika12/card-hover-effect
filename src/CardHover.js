@@ -1,25 +1,35 @@
 import React, { Component } from "react";
 import "./Styles/CardHover.css";
+import CardData from './Constants'
 
 class CardHover extends Component {
 
-commonComponent = (img,title,post,aTag) => {
+commonComponent = (el) => {
     return <div className="box">
         <img
             className="avtar"
-            src={img}
+            src={el.img}
             alt="person1"
         />
         <div className="box_content">
-            <h3 className="title">{title}</h3>
-            <span className="post">{post}</span>
+            <h3 className="title">{el.title}</h3>
+            <span className="post">{el.post}</span>
         </div>
         <li className="icon">
-            <a href="#">{aTag}</a>
+            <a href="#">{el.aTag}</a>
         </li>
    </div>
 }
+ ConvertData= () =>{
+    let Data=[]
+    CardData.forEach(el=>{
+        Data.push(this.commonComponent(el))
+    })
+    return Data
+}
   render() {
+      console.log("carddata",CardData)
+    let result = this.ConvertData()
     return (
       <div className="text-center">
         <div className="container">
@@ -27,9 +37,10 @@ commonComponent = (img,title,post,aTag) => {
         </div>
         <section className="team">
             <div className="row">
-            {this.commonComponent(require("./person2.jpeg").default,"Aaron Rossi","Ceo and co-founder","read more")}
-            {this.commonComponent(require("./person2.jpeg").default,"Aaron Rossi","Ceo and co-founder","read more")}
-            {this.commonComponent(require("./person2.jpeg").default,"Aaron Rossi","Ceo and co-founder","read more")}
+                {result}
+            {/* {this.commonComponent(require("./Images/person2.jpeg").default,"Aaron Rossi","Ceo and co-founder","read more")}
+            {this.commonComponent(require("./Images/person2.jpeg").default,"Aaron Rossi","Ceo and co-founder","read more")}
+            {this.commonComponent(require("./Images/person2.jpeg").default,"Aaron Rossi","Ceo and co-founder","read more")} */}
             </div>
         </section>
       </div>
