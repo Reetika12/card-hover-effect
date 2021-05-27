@@ -16,7 +16,10 @@ commonComponent = (el) => {
             <span className="post">{el.post}</span>
         </div>
         <li className="icon">
-            <a href="#">{el.aTag}</a>
+            <a href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+            >{el.aTag}</a>
         </li>
    </div>
 }
