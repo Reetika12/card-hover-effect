@@ -5,7 +5,10 @@ import "./Styles/CardHover.css"
 
 const AnimateOnScroll = () => {
     useEffect(() => {
-        Aos.init({duration: 2000})
+        Aos.init({
+            duration: 2000,
+            offset:300
+        })
     }, [])
  
         return (

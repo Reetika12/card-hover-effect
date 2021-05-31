@@ -71,3 +71,21 @@
     max-width: 50%;
     margin:auto;
 }
+.rec.rec-arrow {
+    border-radius: 50%;
+    background-color: green;
+    color:black;
+  }
+  .rec.rec-arrow:hover {
+    border-radius: 50%;
+    background: green;
+    color:black;
+  }
+  /* .rec.rec-arrow:hover {
+    border-radius: 50%;
+    background-color: green;
+    color:white;
+} */
+.rec.rec-arrow:disabled {
+    visibility: hidden;
+}
