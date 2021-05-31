@@ -16,7 +16,6 @@ const breakPoints = [
               <div>
              
                   <Carousel 
-                    //  renderArrow={this.myArrow}
                      breakPoints={breakPoints}
                   >
                         <Item>One</Item>
