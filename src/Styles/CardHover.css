@@ -85,18 +85,27 @@
     visibility: hidden;
 }
 .rec.rec-arrow:enabled {
-    background-color:#fff;
+    background-color: green;
+    color:black;
+}
+.rec .rec-arrow-right:focus:enabled
+{
+    background-color: green;
     color:black;
 }
 .rec .rec-arrow-right:hover:enabled{
     background-color: green;
     color:black;
 }
+
 .rec .rec-arrow-left:hover:enabled{
     background-color: green;
     color:black;
 }
-
+.rec .rec-arrow-left:focus:enabled{
+    background-color: green;
+    color:black;
+}
 .rec .rec-dot:hover{
     box-shadow: 0 0 1px 3px green;
 }
