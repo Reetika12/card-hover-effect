@@ -4,11 +4,13 @@ import './Styles/CardHover.css'
 import Dialog from '@material-ui/core/Dialog';
 import { withStyles } from "@material-ui/core/styles";
 import { createStyles} from '@material-ui/core';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
   const styles = theme => createStyles({
     scrollPaper: {
         marginLeft: '66%',
-        marginTop: '5%'
+        marginTop: '-5%',
     }
   });
 class PopUpWithDropdown extends Component {
@@ -16,35 +18,44 @@ class PopUpWithDropdown extends Component {
     {
         super(props);
         this.state={
-            dialogOpen:false
+            dialogOpen:false,
         }
     }
     handleChatBlock = () =>{
         this.setState({
-            dialogOpen:true
+            dialogOpen:true,
         })
     }
     handleClose = () => {
         this.setState({
-            dialogOpen:false
+            dialogOpen:false,
         })
       };
     render() {
         let {classes} = this.props
         let {dialogOpen} = this.state
         return (
-            <div>
+            <div >
                 <Dialog 
                  classes={{scrollPaper: classes.scrollPaper }}
                  onClose={this.handleClose}
                  open={dialogOpen}>
-                    hello friends
-                    how are you ?
-                    how you have been
-                    <div style={{width:'100px',height:'100px',background:'green'}}>
-
+                     <div style={{background:'pink'}}>
+                         <div style={{display:'flex'}}>
+                            <div>How to open asset?</div>
+                            <ExpandMoreIcon/>
+                         </div>
+                        <div style={{width:'100px',height:'100px',background:'green'}}>
+                        </div>
                     </div>
                 </Dialog>
+                {dialogOpen && <div style={{zIndex:'1'}}>
+                 <ArrowDropDownIcon color="secondary" fontSize="large"/>
+                </div>}
+                {/* <Dialog open={dialogSecondOpen}> */}
+                    {/* <img src={require("./Images/Vector.png").default} alt="triangle"/> */}
+                    {/* <img src={require("./Images/ChatBubble.png").default} alt="triangle"/> */}
+                {/* </Dialog> */}
                 <div onClick={this.handleChatBlock} className="ChatStyle">
                    <ChatOutlinedIcon/>
                 </div>
