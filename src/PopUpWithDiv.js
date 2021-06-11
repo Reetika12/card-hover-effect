@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import KeyboardArrowUpOutlinedIcon from '@material-ui/icons/KeyboardArrowUpOutlined';
+// import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import ChatOutlinedIcon from "@material-ui/icons/ChatOutlined";
 import "./Styles/CardHover.css";
 
@@ -40,14 +41,15 @@ class PopUpWithDiv extends Component {
             <ExpandMoreIcon />
           </div>
         </div>
-        <div className="combinePopUp">
+        {/* <div className="combinePopUp"> */}
             <div className="arrowStyle">
-            <ArrowDropDownIcon fontSize="large"/> 
+            {/* <img src={require("./Images/Vector.png").default} alt="triangle"/> */}
+            {/* <ArrowDropDownIcon fontSize="large"/>  */}
             </div>
             <div onClick={this.handleChatBlock} className="ChatStyle">
                 <ChatOutlinedIcon/>
             </div>
-        </div>
+        {/* </div> */}
     </div>
       </>
     );
